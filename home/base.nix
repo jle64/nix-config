@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
+  imports = [
+    inputs.nix-index-database.homeModules.nix-index
+  ];
+
   home = {
     username = "jonathan";
     homeDirectory = "/home/jonathan";

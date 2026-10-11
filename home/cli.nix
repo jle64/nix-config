@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  dotfilesDir = "${config.home.homeDirectory}/Projets/nix-config/home/config";
+  links = import ./lib/symlinks.nix { inherit config lib; };
 
   simpleFiles = {
     ".ansible.cfg" = "ansible/ansible.cfg";
@@ -19,24 +19,6 @@
     ".config/fish/fish_plugins" = "fish/fish_plugins";
     ".config/starship.toml" = "starship.toml";
   };
-
-  fileAttrs =
-    lib.mapAttrs (target: src: {
-      source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/${src}";
-    }) simpleFiles;
-
-  configDirs = [
-    "bash"
-    "nushell"
-    "zellij"
-  ];
-
-  dirAttrs =
-    lib.genAttrs
-    (map (n: ".config/${n}") configDirs)
-    (path: {
-      source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/${builtins.baseNameOf path}";
-    });
 in {
   home = {
     packages = with pkgs; [
@@ -53,7 +35,6 @@ in {
       duf
       eza
       fd
-      fish
       fishPlugins.bass
       fishPlugins.fzf
       fishPlugins.git-abbr
@@ -100,10 +81,9 @@ in {
       yq-go
       yt-dlp
       zellij
-      zoxide
     ];
 
-    file = fileAttrs // dirAttrs;
+    file = (links.linkFiles simpleFiles) // (links.linkConfigDirs [ "bash" "nushell" "zellij" ]);
   };
 
   programs = {
@@ -128,5 +108,5 @@ in {
     git = import lib/git.nix;
   };
 
-  xdg.configFile."nvim/init.lua".source = lib.mkForce (config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/nvim/init.lua");
+  xdg.configFile."nvim/init.lua".source = lib.mkForce (links.link "nvim/init.lua");
 }
