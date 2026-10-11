@@ -1,41 +1,41 @@
 # NixOS & Home Manager Configuration
 
-Configuration unifiée en mono-flake pour NixOS et Home Manager.
+Unified mono-flake configuration for NixOS and Home Manager.
 
 ## Structure
 
 ```
 nix-config/
-├── flake.nix                       # Flake racine unique
-├── flake.lock                      # Lockfile partagé
+├── flake.nix                       # Root flake definition
+├── flake.lock                      # Shared lockfile
 ├── hosts/
-│   └── sephiroth/                  # Machine NixOS sephiroth
-│       ├── configuration.nix       # Configuration système
+│   └── sephiroth/                  # NixOS host 'sephiroth'
+│       ├── configuration.nix       # System configuration
 │       └── hardware-configuration.nix
-└── home/                           # Configuration Home Manager
-    ├── base.nix                    # Base commune utilisateur
-    ├── cli.nix                     # Outils CLI & shells
-    ├── desktop.nix                 # Environnement graphique & apps
-    ├── gaming.nix                  # Jeux
-    ├── lib/git.nix                 # Configuration Git
-    └── config/                     # Dotfiles (symlinks out-of-store)
+└── home/                           # Home Manager configuration
+    ├── base.nix                    # Common user configuration
+    ├── cli.nix                     # CLI tools & shells
+    ├── desktop.nix                 # Graphical environment & desktop apps
+    ├── gaming.nix                  # Gaming packages
+    ├── lib/git.nix                 # Git configuration
+    └── config/                     # Dotfiles (out-of-store symlinks)
 ```
 
-## Utilisation
+## Usage
 
-### Sur la machine NixOS (`sephiroth`)
-Home Manager est intégré directement en tant que module NixOS. Une seule commande met à jour le système et la session utilisateur :
+### On the NixOS host (`sephiroth`)
+Home Manager is integrated directly as a NixOS module. A single command updates both the system and the user environment:
 
 ```bash
 nh os switch
 ```
 
-### Sur d'autres machines (ex: `cloud` en standalone)
+### On standalone hosts (e.g., `cloud`)
 
 ```bash
 nh home switch --flake .#jonathan@cloud
 ```
-ou
+or
 ```bash
 home-manager switch --flake .#jonathan@cloud
 ```
