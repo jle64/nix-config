@@ -1,6 +1,6 @@
 # NixOS & Home Manager Configuration
 
-Unified mono-flake configuration for NixOS and Home Manager.
+Configuration for NixOS and Home Manager.
 
 ## Structure
 
@@ -23,8 +23,7 @@ nix-config/
 
 ## Usage
 
-### On the NixOS host (`sephiroth`)
-Home Manager is integrated directly as a NixOS module. A single command updates both the system and the user environment:
+### On NixOS hosts (e.g., `sephiroth`)
 
 ```bash
 nh os switch
