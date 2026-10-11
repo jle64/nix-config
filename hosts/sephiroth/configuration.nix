@@ -188,58 +188,43 @@
     binfmt = true;
   };
 
+  # nh helper
+  programs.nh = {
+    enable = true;
+    flake = "/home/jonathan/Projets/nix-config";
+  };
+
   # other packages
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     android-tools
     atop
-    bat
     bazaar
     bpftrace
-    brightnessctl
     btrfs-progs
     cliphist
-    curl
     ddcutil
-    doggo
     efibootmgr
-    eza
-    fd
     file
     file-roller
-    fish
     git
     glib # for gdbus
     gnome-text-editor
     gnupg
     gpu-screen-recorder
     greetd
-    htop
     ivpn
     ivpn-ui
-    jq
     kdePackages.kdeconnect-kde
-    kitty
     lsof
     ltrace
     mpv
-    mtr
     nautilus
-    ncdu
-    neovim
-    nh
     nixfmt
     pciutils
-    playerctl
-    progress
-    pv
     python314
-    ripgrep
-    rsync
     scrcpy
-    skim
     sshfs
-    strace
     sunshine
     sysstat
     tuigreet
@@ -250,7 +235,6 @@
     wireguard-tools
     wireplumber
     xwayland-satellite
-    zoxide
   ];
 
 

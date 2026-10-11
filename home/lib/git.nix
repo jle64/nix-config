@@ -84,7 +84,7 @@
     };
 
     credential = {
-      helper = "/home/jonathan/.nix-profile/libexec/git-core/git-credential-store";
+      helper = "store";
     };
 
     commit = {

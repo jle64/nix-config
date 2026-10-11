@@ -4,6 +4,8 @@
   lib,
   ...
 }: let
+  dotfilesDir = "${config.home.homeDirectory}/Projets/nix-config/home/config";
+
   simpleFiles = {
     ".ansible.cfg" = "ansible/ansible.cfg";
     ".bash_logout" = "bash/bash_logout";
@@ -20,7 +22,7 @@
 
   fileAttrs =
     lib.mapAttrs (target: src: {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/config/${src}";
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/${src}";
     }) simpleFiles;
 
   configDirs = [
@@ -33,7 +35,7 @@
     lib.genAttrs
     (map (n: ".config/${n}") configDirs)
     (path: {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/config/${builtins.baseNameOf path}";
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/${builtins.baseNameOf path}";
     });
 in {
   home = {
@@ -126,5 +128,5 @@ in {
     git = import lib/git.nix;
   };
 
-  xdg.configFile."nvim/init.lua".source = lib.mkForce (config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/config/nvim/init.lua");
+  xdg.configFile."nvim/init.lua".source = lib.mkForce (config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/nvim/init.lua");
 }
