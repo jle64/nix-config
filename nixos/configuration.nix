@@ -250,7 +250,6 @@
     wireguard-tools
     wireplumber
     xwayland-satellite
-    yaru-theme
     zoxide
   ];
 
