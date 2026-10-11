@@ -72,7 +72,13 @@
   services.timesyncd.enable = true;
 
   # locale and fonts
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+  supportedLocales = [
+    "en_US.UTF-8/UTF-8"
+    "fr_FR.UTF-8/UTF-8"
+  ];
+  defaultLocale = "en_US.UTF-8";
+};
   console = {
       font = "Lat2-Terminus16";
       useXkbConfig = true;
@@ -165,7 +171,9 @@
     '';
   };
   services.udisks2.enable = true;
+  services.gvfs.enable = true;
   services.oo7.enable = true;
+  services.gnome.gnome-keyring.enable = false;
   security.pam.services.greetd.oo7.enable = true;
   services.pipewire = {
     enable = true;
@@ -242,6 +250,7 @@
     wireguard-tools
     wireplumber
     xwayland-satellite
+    yaru-theme
     zoxide
   ];
 
