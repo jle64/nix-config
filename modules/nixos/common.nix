@@ -61,6 +61,12 @@
     enable = true;
     allowPing = true;
     allowedTCPPorts = [ 22 ];
+    allowedTCPPortRanges = [
+      { from = 1714; to = 1764; }
+    ];
+    allowedUDPPortRanges = [
+      { from = 1714; to = 1764; }
+    ];
   };
   services.openssh.enable = true;
   services.resolved = {
