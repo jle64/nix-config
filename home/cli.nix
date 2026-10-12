@@ -39,6 +39,7 @@ in {
       fishPlugins.fzf
       fishPlugins.git-abbr
       fzf
+      glab
       gron
       htop
       ipcalc
