@@ -154,7 +154,7 @@ wallpaper_scheme = "dysfunctional"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "kitty", "niri", "starship" ]
-    community_ids = [ "opencode", "senpai", "neovim", "zed", "fastfetch", "zellij" ]
+    community_ids = [ "opencode", "pywalfox-beta4", "senpai", "neovim", "zed", "fastfetch", "zellij" ]
 
 [widget.battery]
 hide_when_full = true

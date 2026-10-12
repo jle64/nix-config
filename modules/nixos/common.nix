@@ -56,8 +56,9 @@
 
   # Base networking and DNS
   networking.networkmanager.enable = true;
+  networking.nftables.enable = true;
   networking.firewall = {
-    enable = false;
+    enable = true;
     allowPing = true;
     allowedTCPPorts = [ 22 ];
   };
