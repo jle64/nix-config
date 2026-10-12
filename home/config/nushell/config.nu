@@ -89,7 +89,7 @@ $env.config = {
 
 }
 
-source ~/.config/nushell/starship/starship.nu
+source ~/.config/nushell/starship.nu
 
 alias ll = ls -l
 alias z = zoxide
