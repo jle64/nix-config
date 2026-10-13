@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../../modules/nixos/common.nix
     ../../modules/nixos/desktop.nix
+    ../../modules/nixos/btrfs.nix
   ];
 
   # Host identity

@@ -59,6 +59,7 @@
   services.oo7.enable = true;
   services.gnome.gnome-keyring.enable = false;
   security.pam.services.greetd.oo7.enable = true;
+  programs.gnupg.agent.enable = true;
 
   # AppImage binary format support
   programs.appimage = {
