@@ -7,6 +7,7 @@
     configs.home = {
       SUBVOLUME = "/home";
       FSTYPE = "btrfs";
+      ALLOW_GROUPS = [ "wheel" ];
 
       TIMELINE_CREATE = true;
       TIMELINE_CLEANUP = true;

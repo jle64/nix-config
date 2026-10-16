@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../../modules/nixos/common.nix
     ../../modules/nixos/desktop.nix
+    ../../modules/nixos/virtualisation.nix
     ../../modules/nixos/btrfs.nix
   ];
 
@@ -55,12 +56,6 @@
 
   # Bluetooth hardware
   hardware.bluetooth.enable = true;
-
-  # Container virtualization
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
 
   # VPN service
   services.ivpn.enable = true;
