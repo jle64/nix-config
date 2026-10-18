@@ -17,6 +17,7 @@
   users.users.jonathan.extraGroups = [ "libvirtd" ];
   environment.systemPackages = with pkgs; [
     virt-manager # contains virt-install
+    OVMF # for uefi
   ];
   
   # Cockpit
