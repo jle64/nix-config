@@ -37,7 +37,6 @@ in {
       fd
       fishPlugins.bass
       fishPlugins.fzf
-      fishPlugins.git-abbr
       fzf
       glab
       gron
@@ -53,7 +52,6 @@ in {
       kubectx
       kubernetes-helm
       lftp
-      lnav
       mtr
       ncdu
       nmap
@@ -67,7 +65,6 @@ in {
       rclone
       ripgrep
       rsync
-      sassc
       senpai
       shellcheck
       skim
