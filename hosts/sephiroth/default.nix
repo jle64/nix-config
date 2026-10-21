@@ -29,10 +29,10 @@
     enable = true;
     emergencyAccess = true;
   };
-  boot.initrd.verbose = false;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Silent boot parameters
+  boot.initrd.verbose = false;
   boot.consoleLogLevel = 0;
   boot.kernelParams = [
     "quiet"
