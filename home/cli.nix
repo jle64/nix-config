@@ -52,6 +52,7 @@ in {
       kubectx
       kubernetes-helm
       lftp
+      moreutils
       mtr
       ncdu
       nmap
