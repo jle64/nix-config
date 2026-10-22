@@ -101,6 +101,7 @@
     ltrace
     nixfmt
     pciutils
+    python314
     python315
     sshfs
     strace
