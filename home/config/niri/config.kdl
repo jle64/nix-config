@@ -63,7 +63,7 @@ blur {
 window-rule {
     opacity 1.0
     open-floating false
-    geometry-corner-radius 12
+    geometry-corner-radius 0
     clip-to-geometry true
     background-effect {
         blur true
