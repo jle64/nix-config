@@ -26,13 +26,11 @@
 
   # Initrd & Kernel
   boot.initrd.systemd = {
-    enable = true;
     emergencyAccess = true;
   };
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Silent boot parameters
-  boot.initrd.verbose = false;
   boot.consoleLogLevel = 0;
   boot.kernelParams = [
     "quiet"
