@@ -250,7 +250,7 @@ keybinds clear-defaults=true {
         bind "z" { ToggleFocusFullscreen; SwitchToMode "normal"; }
     }
     shared_except "locked" "tab" {
-        bind "Ctrl w" {
+        bind "Ctrl g" {
             LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij-worktree.wasm" {
                 floating true
             }
