@@ -35,6 +35,7 @@ in {
       duf
       eza
       fd
+      ffmpeg
       fishPlugins.bass
       fishPlugins.fzf
       fzf
@@ -74,7 +75,6 @@ in {
       testssl
       tig
       trash-cli
-      uv
       vimPlugins.vim-plug
       xh
       yq-go
@@ -104,6 +104,12 @@ in {
     };
     skim.enableFishIntegration = true;
     starship.enable = true;
+    uv = {
+      enable = true;
+      settings = {
+        python-preference = "only-managed";
+      };
+    };
     git = import lib/git.nix;
   };
 

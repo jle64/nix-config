@@ -90,6 +90,22 @@
     flake = "/home/jonathan/Projets/nix-config";
   };
 
+  # Dynamic linker for unpatched binaries and Python wheels (uv)
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      glib
+      libGL
+      libICE
+      libSM
+      libX11
+      libXext
+      libxcb
+      libsndfile
+      onetbb
+    ];
+  };
+
   # Essential base system packages
   environment.systemPackages = with pkgs; [
     btrfs-progs
