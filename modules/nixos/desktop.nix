@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   # Virtual terminal (kmscon)
   services.kmscon = {
     enable = true;
@@ -65,10 +68,13 @@
   programs.appimage = {
     enable = true;
     binfmt = true;
+    package = pkgs.appimage-run.override {
+      extraPkgs = pkgs: [pkgs.libgpg-error];
+    };
   };
 
   # Desktop user groups
-  users.users.jonathan.extraGroups = [ "video" "audio" ];
+  users.users.jonathan.extraGroups = ["video" "audio"];
 
   # Desktop-specific system packages
   environment.systemPackages = with pkgs; [
