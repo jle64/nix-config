@@ -1,4 +1,4 @@
-keybinds clear-defaults=true {
+keybinds clear-defaults=true primary="Ctrl Shift" secondary="Alt" {
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }
     }
