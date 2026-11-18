@@ -297,3 +297,5 @@ show_startup_tips false
 web_server false
 web_server_ip "127.0.0.1"
 web_server_port 8082
+pane_frame_style "full"
+bars_hidden_on_start "status-bar,tab-bar"
