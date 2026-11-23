@@ -139,10 +139,10 @@ binds {
         spawn "noctalia" "msg" "panel-toggle" "clipboard"
     }
     Mod+Return hotkey-overlay-title="Open a Terminal" {
-        spawn "~/.cargo/bin/zellij" "terminal"
+        spawn "kitty"
     }
     Mod+Shift+Return hotkey-overlay-title="Open a Terminal" {
-        spawn "kitty"
+        spawn "~/.cargo/bin/zellij" "terminal"
     }
     Mod+N hotkey-overlay-title="Nautilus" {
         spawn "nautilus"
