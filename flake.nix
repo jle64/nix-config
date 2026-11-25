@@ -53,6 +53,10 @@
             ./home/cli.nix
           ];
         };
+        "jonathan@sephiroth" = throw ''
+	  Home Manager is handled by NixOS on this machine.
+          Use `nh os switch` or equivalent instead of `nh home switch`.
+        '';
         "jonathan@cloud" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs; };
